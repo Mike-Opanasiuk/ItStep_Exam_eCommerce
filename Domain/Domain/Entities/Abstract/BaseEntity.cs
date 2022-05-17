@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities.Abstract
 {
-    internal class BaseEntity
+    internal class BaseEntity: IEntity
     {
+        public Guid Id { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
     }
 }
