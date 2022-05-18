@@ -278,6 +278,19 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.5"
+        },
+        "compile": {
+          "bin/placeholder/Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.dll": {}
+        }
       }
     }
   },
@@ -727,10 +740,16 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.csproj",
+      "msbuildProject": "../Core/Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Core >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.5"
     ]
   },
@@ -740,11 +759,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Toha1\\source\\repos\\ItStep_Exam_eCommerce\\Domain\\Domain\\Domain.csproj",
-      "projectName": "Domain",
-      "projectPath": "C:\\Users\\Toha1\\source\\repos\\ItStep_Exam_eCommerce\\Domain\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Toha1\\source\\repos\\ItStep_Exam_eCommerce\\Infrastructure\\Infrastructure.csproj",
+      "projectName": "Infrastructure",
+      "projectPath": "C:\\Users\\Toha1\\source\\repos\\ItStep_Exam_eCommerce\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Toha1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Toha1\\source\\repos\\ItStep_Exam_eCommerce\\Domain\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\Toha1\\source\\repos\\ItStep_Exam_eCommerce\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Toha1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -760,7 +779,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Toha1\\source\\repos\\ItStep_Exam_eCommerce\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\Toha1\\source\\repos\\ItStep_Exam_eCommerce\\Core\\Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
