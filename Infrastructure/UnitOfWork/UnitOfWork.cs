@@ -4,8 +4,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 {
     private readonly ApplicationDbContext _context;
 
-    public UnitOfWork(ApplicationDbContext context
-        )
+    public UnitOfWork(ApplicationDbContext context)
     {
         _context = context;
     }
