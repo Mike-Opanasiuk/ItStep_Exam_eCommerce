@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Infrastructure.UnitOfWork;
 
-namespace Infrastructure.UnitOfWork
+public class UnitOfWork : IUnitOfWork, IDisposable
 {
-    public class UnitOfWork : IUnitOfWork, IDisposable
+    private readonly ApplicationDbContext _context;
+
+    public UnitOfWork(ApplicationDbContext context
+        )
     {
-        private readonly ApplicationDbContext _ctx;
+        _context = context;
+    }
 
-        public UnitOfWork(ApplicationDbContext ctx)
-        {
-            _ctx = ctx;
-        }
+    public async Task<int> SaveChangesAsync()
+    {
+        return await _context.SaveChangesAsync();
+    }
 
-        public async Task<int> SaveChangesAsync()
-        {
-            return await _ctx.SaveChangesAsync();
-        }
-
-        public void Dispose()
-        {
-            _ctx.Dispose();
-        }
+    public void Dispose()
+    {
+        _context.Dispose();
     }
 }
