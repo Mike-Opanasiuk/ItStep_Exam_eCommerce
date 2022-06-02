@@ -1,7 +1,7 @@
 ﻿using Core.Entities.Abstract;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.UnitOfWork.Repositories;
+namespace Infrastructure.Repositories;
 
 public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
 {
