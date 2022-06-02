@@ -1,6 +1,6 @@
 ﻿using Core.Entities.Abstract;
 
-namespace Infrastructure.UnitOfWork.Repositories;
+namespace Infrastructure.Repositories;
 
 public interface IRepository<TEntity> where TEntity : IEntity
 {

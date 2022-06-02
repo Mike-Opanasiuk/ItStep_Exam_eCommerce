@@ -1,9 +1,8 @@
-﻿namespace Core.Entities.Abstract
+﻿namespace Core.Entities.Abstract;
+
+public interface IEntity
 {
-    public interface IEntity
-    {
-        public Guid Id { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-    }
+    public Guid Id { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 }
