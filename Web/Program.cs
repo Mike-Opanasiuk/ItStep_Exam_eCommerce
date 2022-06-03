@@ -13,7 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
 
-builder.Services.AddMediatR(typeof(MediatREntrypoint).Assembly);
+builder.Services.AddMediatR(typeof(MediatrAssemblyReference).Assembly);
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
