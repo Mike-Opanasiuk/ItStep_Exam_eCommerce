@@ -5,9 +5,16 @@ namespace Core.Entities;
 
 public class RoleEntity : IdentityRole<Guid>, IEntity
 {
+    public RoleEntity()
+    {
+        
+    }
+    
     public RoleEntity(string roleName) : base(roleName)
     {
+        
     }
+    
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
 }
