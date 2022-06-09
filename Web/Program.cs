@@ -1,8 +1,10 @@
 using Application;
+using Core.Entities;
 using Infrastructure;
 using Infrastructure.UnitOfWork;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
+
+builder.Services
+    .AddIdentity<UserEntity, RoleEntity>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddMediatR(typeof(MediatrAssemblyReference).Assembly);
 
@@ -23,6 +29,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseSeed();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
