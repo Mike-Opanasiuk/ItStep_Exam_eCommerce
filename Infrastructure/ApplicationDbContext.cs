@@ -11,5 +11,5 @@ public class ApplicationDbContext : IdentityDbContext<UserEntity, RoleEntity, Gu
 
     }
 
-    public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<ProductEntity> Products { get; set; }
 }
