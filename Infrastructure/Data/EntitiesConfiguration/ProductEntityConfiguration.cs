@@ -10,6 +10,5 @@ public class ProductEntityConfiguration : BaseEntityConfiguration<ProductEntity>
     {
         base.Configure(builder);
 
-        builder.Property(e => e.Name).IsRequired();
     }
 }
