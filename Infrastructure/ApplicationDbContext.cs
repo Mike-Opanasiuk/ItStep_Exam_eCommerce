@@ -10,4 +10,6 @@ public class ApplicationDbContext : IdentityDbContext<UserEntity, RoleEntity, Gu
     {
 
     }
+
+    public virtual DbSet<ProductEntity> Products { get; set; }
 }
