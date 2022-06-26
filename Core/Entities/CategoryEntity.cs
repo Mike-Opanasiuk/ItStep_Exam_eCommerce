@@ -8,7 +8,7 @@ public class CategoryEntity : BaseEntity
     public string Image { get; set; }
     public Guid? ParentCategoryId { get; set; }
 
-    public virtual CategoryEntity Parent { get; set; }
+    public virtual CategoryEntity ParentCategory { get; set; }
     public virtual ICollection<CategoryEntity> Children { get; set; }
     public virtual ICollection<ProductEntity> Products { get; set; }
 
