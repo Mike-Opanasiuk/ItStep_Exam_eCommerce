@@ -1,3 +1,4 @@
+import { Input } from "@base/input";
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { IconCart } from "../../icons/cart";
@@ -12,6 +13,9 @@ export const Header: FC = () => {
                <span className="leading-8 font-medium text-gray-800">Все Буде Україна</span>
             </Link>
             <Link to="/goods" className="ml-8">Товари</Link>
+            <div className="ml-16">
+               <Input type="float" className="border-b w-96 outline-none" />
+            </div>
             <div className="ml-auto flex">
                <Link to="/cart" className="w-16 h-16 flex hover:bg-gray-50 border-b">
                   <IconCart className="h-6 w-6 text-gray-700 m-auto" />

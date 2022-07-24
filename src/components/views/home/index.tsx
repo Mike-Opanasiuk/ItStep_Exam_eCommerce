@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
+import { uid } from "uid";
 import { Card } from "./card";
 
 const products = {
@@ -63,13 +64,13 @@ export const HomeView: FC = () => {
    return (
       <div className="py-4">
          <div className="flex gap-4">
-            <a href="catalog.html" className="flex-1">
+            <Link to={`/product/${uid(6)}`} className="flex-1">
                <img className="object-cover" src="https://i.ytimg.com/vi/l_56hZVOGnI/maxresdefault.jpg" />
                <div className="flex justify-between items-center mt-1">
                   <span className="font-medium text-2xl">Samsung UHD TV</span>
                   <span className="text-2xl">$1230</span>
                </div>
-            </a>
+            </Link>
             <div className="w-2/5 grid grid-cols-2">
                <Link to="/goods" className="flex flex-col">
                   <img
